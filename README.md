@@ -4,12 +4,12 @@
 ###Basics
 
 ####Header
-```
+```cpp
 #include <matio.h>
 ```
 
 ####Create MAT file
-```
+```cpp
 const char *filename = "myfile.mat";
 mat_t *matfp = NULL; //matfp contains pointer to MAT file or NULL on failure
 matfp = Mat_CreateVer(FILENAME,NULL,MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MAT73
@@ -19,7 +19,7 @@ matfp = Mat_CreateVer(FILENAME,NULL,MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MAT7
 ####Create and write variable
 
 - String
-```
+```cpp
 char* fieldname = "MyStringVariable";
 char* mystring = "Text";
 size_t dim[2] = { 1, sizeof(mystring)/sizeof(mystring[0]) };
@@ -28,7 +28,7 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 ```
 
 - Integer
-```
+```cpp
 char* fieldname = "MyIntegerVariable";
 int myinteger = 42;
 size_t dim[2] = { 1, 1 };
@@ -38,7 +38,7 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 
 
 - Double
-```
+```cpp
 char* fieldname = "MyDoubleVariable";
 double mydouble = 4.2;
 size_t dim[2] = { 1, 1 };
@@ -48,7 +48,7 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 
 
 - Complex double
-```
+```cpp
 char* fieldname = "MyComplexDoubleVariable";
 double real = 4.2;
 double imag = 1.5;
@@ -60,7 +60,7 @@ Mat_VarWrite(matfp,variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 
 
 - Bool
-```
+```cpp
 char* fieldname = "MyBoolVariable";
 bool mybool = true;
 size_t dim[2] = { 1, 1 };
