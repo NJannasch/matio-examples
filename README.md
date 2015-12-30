@@ -16,7 +16,7 @@ matfp = Mat_CreateVer(FILENAME,NULL,MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MAT7
 //dont forget to close file with Mat_Close(matfp);
 ```
 
-####Create and write variable
+####Create and save variables ([saveVariable.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveVariable.cpp))
 
 - String
 ```cpp
@@ -73,7 +73,15 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 Mat_VarFree(variable);
 ```
 
+
+####Create and save structs ([saveStruct.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveStruct.cpp))
+
+- 1 x 1 struct
+
+- 1 x n struct
+
 ----------
+
 
 > **About matio:**
 > 
