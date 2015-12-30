@@ -55,9 +55,9 @@ Mat_VarFree(variable);
 char* fieldname = "MyComplexDoubleVariable";
 double real = 4.2;
 double imag = 1.5;
-mat_complex_split_t z = {&real, &imag};
+mat_complex_split_t mycomplexdouble = {&real, &imag};
 size_t dim[2]={ 1, 1 };
-matvar_t *variable = Mat_VarCreate(fieldname, MAT_C_DOUBLE, MAT_T_DOUBLE, 2, dim, &z, MAT_F_COMPLEX);
+matvar_t *variable = Mat_VarCreate(fieldname, MAT_C_DOUBLE, MAT_T_DOUBLE, 2, dim, &mycomplexdouble, MAT_F_COMPLEX);
 Mat_VarWrite(matfp,variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 Mat_VarFree(variable);
 ```
