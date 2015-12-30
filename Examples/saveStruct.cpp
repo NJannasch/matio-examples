@@ -13,7 +13,8 @@ int main() {
 	size_t structdim[2] = { 1, 2 }; // create 1x2 struct
 	matvar_t* matstruct = Mat_VarCreateStruct(structname, 2, structdim, fieldnames, 3); //main struct: Data
 
-
+	//Note: Matlab starts counting at 1
+	
 	//first row in 'Data'
 	char* mystring0 = "Speed"; //Data(1).name
 	size_t dim0[2] = { 1, 5 };
@@ -27,7 +28,7 @@ int main() {
 	Mat_VarSetStructFieldByName(matstruct, fieldnames[1], 0, variable1); //0 for first row
 	Mat_VarFree(variable1);
 
-	double mydouble0 = 42.3;  //Data(2).value
+	double mydouble0 = 42.3;  //Data(1).value
 	size_t dim2[2] = { 1, 1 };
 	matvar_t *variable2 = Mat_VarCreate(fieldnames[2], MAT_C_DOUBLE, MAT_T_DOUBLE, 2, dim2, &mydouble0, 0);
 	Mat_VarSetStructFieldByName(matstruct, fieldnames[2], 0, variable2); //0 for first row
