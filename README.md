@@ -118,6 +118,22 @@ Mat_VarWrite(matfp, matstruct, MAT_COMPRESSION_NONE);
 Mat_VarFree(matstruct);
 ```
 
+- nested struct
+
+```cpp
+char *structname = "Test";
+const char *fieldnames[1] = { "Data"};
+size_t structdim0[2] = { 1, p }; // create 1 x p struct
+matvar_t* matstruct0 = Mat_VarCreateStruct(structname, 2, structdim0, fieldnames, 1); //main struct: Test
+char* mystring0 = "Data";
+const char *Datafieldnames[3] = { "name", "unit", "value" };
+size_t structdim1[2] = { 1, 1 };
+matvar_t* matstruct1 = Mat_VarCreateStruct(mystring0, 2, structdim1, Datafieldnames, 3);
+//Set Test(p).Data (1 <= p <= n)
+Mat_VarSetStructFieldByName(matstruct0, fieldnames[0], p, matstruct1);
+Mat_VarWrite(matfp, matstruct0, MAT_COMPRESSION_NONE);
+Mat_VarFree(matstruct0);
+```
 
 ----------
 
@@ -133,5 +149,3 @@ Mat_VarFree(matstruct);
 > 
 > - For file version 7.3 please compile matio with HDF-5
 > [https://www.hdfgroup.org/HDF5/release/obtain5.html](https://www.hdfgroup.org/HDF5/release/obtain5.html)
-
-----------
