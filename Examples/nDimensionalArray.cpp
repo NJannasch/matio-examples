@@ -5,7 +5,7 @@ int main() {
 	const char *FILENAME = "export.mat";
 	
 	const int first = 4; //rows
-    const int second = 4; //columns
+	const int second = 4; //columns
 	
 	//Open file
 	matfp = Mat_CreateVer(FILENAME, NULL, MAT_FT_MAT5);
@@ -14,12 +14,12 @@ int main() {
 	
 	//#########
 	// 2d array
-    int array2d[first][second] = { 0 };
+	int array2d[first][second] = { 0 };
  
-    // fill 2d array
-    for (int i = 0; i < first; i++)
-        for (int j = 0; j < second; j++)
-            array2d[i][j] = i * j;
+	// fill 2d array
+	for (int i = 0; i < first; i++)
+		for (int j = 0; j < second; j++)
+			array2d[i][j] = i * j;
 
 	// write
 	char* fieldname2d = "array2d";
