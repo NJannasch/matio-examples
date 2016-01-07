@@ -4,7 +4,7 @@ int main() {
 	mat_t *matfp = NULL;
 	const char *FILENAME = "export.mat";
 	
-	const int first = 4; //rows
+	const int first = 3; //rows
 	const int second = 4; //columns
 	
 	//Open file
@@ -30,7 +30,7 @@ int main() {
 
 	//#########
 	// 3d array
-	const int third = 4;
+	const int third = 5;
 	int array3d[first][second][third] = { 0 };
 
 	// fill 3d array
@@ -48,7 +48,7 @@ int main() {
 
 	//#########
 	// 4d array
-	const int fourth = 4;
+	const int fourth = 6;
 	int array4d[first][second][third][fourth] = { 0 };
 
 	// fill 4d array
