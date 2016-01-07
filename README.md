@@ -13,8 +13,8 @@
 ```cpp
 const char *filename = "myfile.mat";
 mat_t *matfp = NULL; //matfp contains pointer to MAT file or NULL on failure
-matfp = Mat_CreateVer(FILENAME,NULL,MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MAT73
-//dont forget to close file with Mat_Close(matfp);
+matfp = Mat_CreateVer(filename, NULL, MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MAT73
+//don't forget to close file with Mat_Close(matfp);
 ```
 
 ####Create and save variables ([saveVariable.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveVariable.cpp))
