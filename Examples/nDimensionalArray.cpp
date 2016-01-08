@@ -19,7 +19,7 @@ int main() {
 	// fill 2d array
 	for (int i = 0; i < first; i++)
 		for (int j = 0; j < second; j++)
-			array2d[i][j] = i * j;
+			array2d[i][j] = (i + 1) * (j + 1);
 
 	// write
 	char* fieldname2d = "array2d";
@@ -37,7 +37,7 @@ int main() {
 	for (int i = 0; i < first; i++)
 		for (int j = 0; j < second; j++)
 			for (int k = 0; k < third; k++)
-				array3d[i][j][k] = i * j * k;
+				array3d[i][j][k] = (i + 1) * (j + 1) * (k + 1);
 
 	// write
 	char* fieldname3d = "array3d";
@@ -56,7 +56,7 @@ int main() {
 		for (int j = 0; j < second; j++)
 			for (int k = 0; k < third; k++)
 				for (int l = 0; l < fourth; l++)
-					array4d[i][j][k][l] = i * j * k *l;
+					array4d[i][j][k][l] = (i + 1) * (j + 1) * (k + 1) * (l + 1);
 
 	// write
 	char* fieldname4d = "array4d";
