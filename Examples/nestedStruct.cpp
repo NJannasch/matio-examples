@@ -42,7 +42,6 @@ int main() {
 	size_t dim5[2] = { 1, 1 };
 	matvar_t *variable = Mat_VarCreate(fieldnames[0], MAT_C_DOUBLE, MAT_T_DOUBLE, 2, dim5, &mydouble, 0);
 	Mat_VarSetStructFieldByName(matstruct1, Datafieldnames[0], 0, variable);
-	Mat_VarFree(variable);
 
 
 	//save main struct
