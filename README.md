@@ -95,7 +95,6 @@ char* mystring = "Speed";
 size_t dim[2] = { 1, 5 }; //string dimension
 matvar_t *variable = Mat_VarCreate(fieldnames[0], MAT_C_CHAR, MAT_T_UTF8, 2, dim, mystring, 0);
 Mat_VarSetStructFieldByName(matstruct, fieldnames[0], 0, variable); //insert in Data.name
-Mat_VarFree(variable);
 Mat_VarWrite(matfp, matstruct, MAT_COMPRESSION_NONE);
 Mat_VarFree(matstruct);
 ```
@@ -113,7 +112,6 @@ char* mystring = "Speed";
 size_t dim[2] = { 1, 5 }; //string dimension
 matvar_t *variable = Mat_VarCreate(fieldnames[0], MAT_C_CHAR, MAT_T_UTF8, 2, dim, mystring, 0);
 Mat_VarSetStructFieldByName(matstruct, fieldnames[0], p, variable); //insert Data(p).name (1 <= p <= n)
-Mat_VarFree(variable);
 Mat_VarWrite(matfp, matstruct, MAT_COMPRESSION_NONE);
 Mat_VarFree(matstruct);
 ```
