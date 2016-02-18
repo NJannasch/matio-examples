@@ -79,6 +79,82 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 Mat_VarFree(variable);
 ```
 
+####Create and save arrays ([nDimensionalArray.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/nDimensionalArray.cpp))
+
+- 1-D
+
+```cpp
+const int first = 3; //rows
+int array1d[first]= { 0 };
+
+// fill 1d array
+for (int i = 0; i < first; i++)
+	array1d[i] = (i + 1);
+
+// write
+char* fieldname1d = "array1d";
+size_t dim1d[1] = { first };
+matvar_t *variable1d = Mat_VarCreate(fieldname1d, MAT_C_INT32, MAT_T_INT32, 1, dim1d, &array1d, 0); //rank 1
+Mat_VarWrite(matfp, variable1d, MAT_COMPRESSION_NONE);
+Mat_VarFree(variable1d);
+
+```
+
+- 2-D (Matrix)
+
+```cpp
+const int second = 4; //columns
+int array2d[first][second] = { 0 };
+
+// fill 2d array
+for (int i = 0; i < first; i++)
+	for (int j = 0; j < second; j++)
+		array2d[i][j] = (i + 1) * (j + 1);
+
+// write
+char* fieldname2d = "array2d";
+size_t dim2d[2] = { first, second };
+matvar_t *variable2d = Mat_VarCreate(fieldname2d, MAT_C_INT32, MAT_T_INT32, 2, dim2d, &array2d, 0); //rank 2
+Mat_VarWrite(matfp, variable2d, MAT_COMPRESSION_NONE);
+Mat_VarFree(variable2d);
+```
+
+- 3-D
+
+```cpp
+const int third = 5;
+int array3d[first][second][third] = { 0 };
+
+// fill 3d array
+for (int i = 0; i < first; i++)
+	for (int j = 0; j < second; j++)
+		for (int k = 0; k < third; k++)
+			array3d[i][j][k] = (i + 1) * (j + 1) * (k + 1);
+
+// write
+char* fieldname3d = "array3d";
+size_t dim3d[3] = { first, second, third };
+matvar_t *variable3d = Mat_VarCreate(fieldname3d, MAT_C_INT32, MAT_T_INT32, 3, dim3d, &array3d, 0); //rank 3
+Mat_VarWrite(matfp, variable3d, MAT_COMPRESSION_NONE);
+Mat_VarFree(variable3d);
+```
+
+- N-D
+
+```cpp
+// for N dimensional array create:
+int arrayNd[first][second][third][...][N] = { 0 };
+
+// fill Nd array
+// ...
+
+// write
+char* fieldnameNd = "arrayNd";
+size_t dimNd[N] = {first, second, third, ..., N};
+matvar_t *variableNd = Mat_VarCreate(fieldnameNd, MAT_C_INT32, MAT_T_INT32, N, dimNd, &arrayNd, 0); //rank N
+Mat_VarWrite(matfp, variableNd, MAT_COMPRESSION_NONE);
+Mat_VarFree(variableNd);
+```
 
 ####Create and save structs ([saveStruct.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveStruct.cpp))
 
@@ -140,7 +216,7 @@ Mat_VarFree(matstruct0);
 > 
 > matio is an open-source library for reading and writing MATLAB MAT files. 
 > 
-> Further information on http://sourceforge.net/projects/matio/ or on its fork https://github.com/tbeu/matio
+> Further information on http://sourceforge.net/projects/matio/ or on https://github.com/tbeu/matio
 > 
 > - For file compression please compile matio with zlib
 > [http://zlib.net](http://zlib.net)
