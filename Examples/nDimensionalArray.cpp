@@ -10,20 +10,20 @@ int main() {
 	//#################################################
 	
 	//#########
-    // 1d array
-    const int first = 3; //rows
-    int array1d[first]= { 0 };
-
-    // fill 1d array
-    for (int i = 0; i < first; i++)
-        array1d[i] = (i + 1);
-
-    // write
-    char* fieldname1d = "array1d";
-    size_t dim1d[1] = { first };
-    matvar_t *variable1d = Mat_VarCreate(fieldname1d, MAT_C_INT32, MAT_T_INT32, 1, dim1d, &array1d, 0); //rank 1
-    Mat_VarWrite(matfp, variable1d, MAT_COMPRESSION_NONE);
-    Mat_VarFree(variable1d);
+	// 1d array
+	const int first = 3; //rows
+	int array1d[first]= { 0 };
+	
+	// fill 1d array
+	for (int i = 0; i < first; i++)
+	array1d[i] = (i + 1);
+	
+	// write
+	char* fieldname1d = "array1d";
+	size_t dim1d[1] = { first };
+	matvar_t *variable1d = Mat_VarCreate(fieldname1d, MAT_C_INT32, MAT_T_INT32, 1, dim1d, &array1d, 0); //rank 1
+	Mat_VarWrite(matfp, variable1d, MAT_COMPRESSION_NONE);
+	Mat_VarFree(variable1d);
 	
 	//#########
 	// 2d array
