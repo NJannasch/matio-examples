@@ -1,14 +1,14 @@
 # Examples for MAT File I/O Library (MATIO)
 
 
-###Basics
+### Basics
 
 ####Header
 ```cpp
 #include <matio.h>
 ```
 
-####Create MAT file
+#### Create MAT file
 
 ```cpp
 const char *filename = "myfile.mat";
@@ -17,7 +17,7 @@ matfp = Mat_CreateVer(filename, NULL, MAT_FT_MAT5); //or MAT_FT_MAT4 / MAT_FT_MA
 //don't forget to close file with Mat_Close(matfp);
 ```
 
-####Create and save variables ([saveVariable.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveVariable.cpp))
+#### Create and save variables ([saveVariable.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveVariable.cpp))
 
 - String
 
@@ -79,7 +79,7 @@ Mat_VarWrite(matfp, variable, MAT_COMPRESSION_NONE); //or MAT_COMPRESSION_ZLIB
 Mat_VarFree(variable);
 ```
 
-####Create and save arrays ([nDimensionalArray.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/nDimensionalArray.cpp))
+#### Create and save arrays ([nDimensionalArray.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/nDimensionalArray.cpp))
 
 - 1-D
 
@@ -156,7 +156,7 @@ Mat_VarWrite(matfp, variableNd, MAT_COMPRESSION_NONE);
 Mat_VarFree(variableNd);
 ```
 
-####Create and save structs ([saveStruct.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveStruct.cpp))
+#### Create and save structs ([saveStruct.cpp](https://github.com/NJannasch/matio-examples/blob/master/Examples/saveStruct.cpp))
 
 - 1 x 1 struct
 
